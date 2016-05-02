@@ -1,0 +1,19 @@
+{
+  "name": "08-MemoryGame",
+  "homepage": "https://github.com/kewanggh/Astro-Weight-Calculator",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "angular": "^1.5.5",
+    "bootstrap": "^3.3.6"
+  }
+}

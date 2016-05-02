@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="memoryGameApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Memory Game</title>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/app/style/main.css">
+    <!-- endinject -->
+</head>
+
+<body data-ng-controller="MainController">
+    <div class="page-header">
+        <h1>Memory Game</h1>
+    </div>
+    <div id='maincontainer'>
+        <div class="timer" ng-class="{critical:isCritical}">
+            {{timeLimit | date: 'm:ss'}}
+        </div>
+        <div class="container">
+            <div class='row'>
+                <div class='col-xs-2 cardcontainer' data-ng-repeat="card in deck" data-ng-click="isGuarding || check(card)">
+                    <div id="back" data-ng-show="!card.flipped">
+                    </div>
+                    <div id="front" data-ng-show="card.flipped">
+                        <p><img src="/app/style/image/{{card.value}}.png" alt="{{card.id}}" /></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top">
+            <button id="singlebutton" name="singlebutton" class="btn btn-primary center-block" ng-disabled="inGame == true" data-ng-click="start()">Start
+        </div>
+    </div>
+    <footer>by Ke Wang 2016</footer>
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- endbower -->
+    <!-- inject:js -->
+    <script src="/app/index.js"></script>
+    <!-- endinject -->
+</body>
+
+</html>
